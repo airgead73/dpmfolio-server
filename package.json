@@ -10,7 +10,7 @@
     "watch": "concurrently \"npm:server\" \"npm:client\"",
     "build": "cd ../client && npm run build",    
     "heroku-postbuild": "echo Skip builds on Heroku",
-    "public": "mv ./build ./public",
+    "public": "mv ./app/build ./app/public" ,
     "clear": "rm -rf app/build"
   },
   "keywords": [

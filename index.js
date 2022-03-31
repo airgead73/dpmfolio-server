@@ -35,7 +35,6 @@ function onError(error) {
   }
 }
 
-function onListening() {
-  if(process.env.NODE_ENV === "development") openBrowser(port);
+function onListening() {  
   console.log(`Listening on ${port}.`)
 }
