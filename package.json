@@ -8,8 +8,9 @@
     "client": "cd ../client && npm start",
     "server": "NODE_ENV=development nodemon -r dotenv/config index.js",
     "watch": "concurrently \"npm:server\" \"npm:client\"",
-    "build": "cd ../client && npm run build",
+    "build": "cd ../client && npm run build",    
     "heroku-postbuild": "echo Skip builds on Heroku",
+    "public": "mv ./build ./public",
     "clear": "rm -rf app/build"
   },
   "keywords": [
