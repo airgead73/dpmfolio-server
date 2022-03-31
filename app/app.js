@@ -4,10 +4,11 @@
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 /**
  * internal imports
  */
-const { connectDB } = require('./config');
+const { connectDB, limiter, sessionConfig } = require('./config');
 /**
  * variables
  */
@@ -20,13 +21,19 @@ const app = express();
 connectDB();
 
 /**
+ * security
+ */
+app.use(limiter);
+
+/**
  * middleware
  */
-
  app.use(express.static(path.join(__dirname, client)));
  app.use(express.json());
  app.use(express.urlencoded({ extended: false }));
  app.use(cookieParser());
+ app.use(session(sessionConfig));
+
 /**
  * dev middleware
  */
