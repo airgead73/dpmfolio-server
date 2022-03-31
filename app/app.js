@@ -9,6 +9,7 @@ const session = require('express-session');
  * internal imports
  */
 const { connectDB, limiter, sessionConfig } = require('./config');
+const { apiRouter } = require('./routers');
 /**
  * variables
  */
@@ -45,6 +46,7 @@ app.use(limiter);
 /**
  * routes
  */
+app.use('/api', apiRouter);
 
 /**
  * error handling

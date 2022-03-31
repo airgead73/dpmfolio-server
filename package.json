@@ -24,6 +24,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
     "express-rate-limit": "^6.3.0",
     "express-session": "^1.17.2",
     "memorystore": "^1.6.7",
