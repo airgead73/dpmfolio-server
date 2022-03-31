@@ -11,7 +11,7 @@
     "build": "cd ../client && npm run build",    
     "heroku-postbuild": "echo Skip builds on Heroku",
     "public": "mv ./app/build ./app/public" ,
-    "clear": "rm -rf app/build"
+    "clear": "rm -rf app/public"
   },
   "keywords": [
     "express",
