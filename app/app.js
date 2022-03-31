@@ -9,6 +9,11 @@ const cookieParser = require('cookie-parser');
  */
 
 /**
+ * variables
+ */
+const client = process.env.NODE_ENV === "development"? 'build' : 'public';
+
+/**
  * app activation
  */
 const app = express();
@@ -16,7 +21,8 @@ const app = express();
 /**
  * middleware
  */
- app.use(express.static(path.join(__dirname, 'build')));
+
+ app.use(express.static(path.join(__dirname, client)));
  app.use(express.json());
  app.use(express.urlencoded({ extended: false }));
  app.use(cookieParser());
