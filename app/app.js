@@ -7,17 +7,17 @@ const cookieParser = require('cookie-parser');
 /**
  * internal imports
  */
-
+const { connectDB } = require('./config');
 /**
  * variables
  */
 const client = process.env.NODE_ENV === "development" ? 'build' : 'public';
-console.log(client)
 
 /**
  * app activation
  */
 const app = express();
+connectDB();
 
 /**
  * middleware
