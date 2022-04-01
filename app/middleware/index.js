@@ -1,1 +1,5 @@
-const { checkJwt } = require('./authMiddleware');
+const checkJwt = require('./authMiddleware');
+
+module.exports = {
+  checkJwt
+}

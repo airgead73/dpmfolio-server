@@ -2,8 +2,10 @@
  * external imports
  */
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const session = require('express-session');
 /**
  * internal imports
@@ -14,6 +16,7 @@ const { apiRouter } = require('./routers');
  * variables
  */
 const client = process.env.NODE_ENV === "development" ? 'build' : 'public';
+const { clientOrigins } = require('./config/env');
 
 /**
  * app activation
@@ -24,6 +27,9 @@ connectDB();
 /**
  * security
  */
+app.use(helmet());
+app.use(cors({ origin: clientOrigins }));
+
 app.use(limiter);
 
 /**
