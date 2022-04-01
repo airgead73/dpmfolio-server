@@ -11,6 +11,7 @@ const session = require('express-session');
  * internal imports
  */
 const { connectDB, limiter, sessionConfig } = require('./config');
+const { errorHandler } = require('./middleware');
 const { apiRouter } = require('./routers');
 /**
  * variables
@@ -62,6 +63,8 @@ app.use('/api', apiRouter);
   error.status = 404;
   next(error);
 });
+
+app.use(errorHandler);
 
 /**
  * export
