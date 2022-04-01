@@ -51,7 +51,7 @@ if(!sessionExp) {
 
 module.exports = {
   audience,
-  clientOrgins,
+  clientOrigins,
   clientOriginUrl,
   domain,
   isDev,
